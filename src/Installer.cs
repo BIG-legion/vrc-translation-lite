@@ -68,7 +68,7 @@ namespace VRCTranslationLiteInstaller
             header.Controls.Add(title);
 
             Label subtitle = new Label();
-            subtitle.Text = "不包含 VRCT 与 New API 本体；自动安装兼容中转、配置 VRCT 并创建图形启动器。";
+            subtitle.Text = "自动安装兼容中转、配置 VRCT，并创建一键式图形启动器。";
             subtitle.ForeColor = Color.FromArgb(204, 251, 241);
             subtitle.AutoSize = true;
             subtitle.Location = new Point(28, 57);
