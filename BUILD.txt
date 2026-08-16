@@ -1,0 +1,42 @@
+VRC Translation Lite 本地构建说明
+=================================
+
+平台：Windows 10/11 x64
+作者：little-legion
+许可：仅供个人非商业用途及免费分享，禁止商用
+
+一、编译图形程序
+
+本项目使用 Windows 自带的 .NET Framework C# 编译器。请在 PowerShell 中从仓库根目录执行：
+
+& "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:winexe /optimize+ /platform:anycpu /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.Web.Extensions.dll /out:"VRC 翻译启动器.exe" "src\Launcher.cs"
+
+& "$env:WINDIR\Microsoft.NET\Framework64\v4.0.30319\csc.exe" /nologo /target:winexe /optimize+ /platform:anycpu /reference:System.Windows.Forms.dll /reference:System.Drawing.dll /reference:System.Web.Extensions.dll /out:"安装 VRC 翻译助手.exe" "src\Installer.cs"
+
+二、兼容中转
+
+bridge\bridge.py 需要 Windows 上的 Python 3.10 或更新版本。正式 Release 为方便普通用户，附带独立的最小 Python 运行时；仓库不提交该二进制运行时。
+
+三、打包结构
+
+VRC-Translation-Lite-Setup\
+  安装 VRC 翻译助手.exe
+  00-先看这里.txt
+  安全与隐私.txt
+  版本信息.txt
+  版权与使用许可.txt
+  payload\
+    VRC 翻译启动器.exe
+    使用说明.txt
+    Compatibility Bridge\
+      bridge.py
+      runtime\
+        python.exe
+        ...
+
+四、发布前检查
+
+1. 确认不存在 token.dat、settings.json、launcher-settings.json、数据库、日志或用户私人 config.json。
+2. 确认兼容中转仅监听 127.0.0.1。
+3. 使用干净目录解压并检查文件结构。
+4. 计算 ZIP 的 SHA256，并与发布的校验文件核对。

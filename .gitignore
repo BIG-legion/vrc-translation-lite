@@ -1,0 +1,27 @@
+# Local secrets and generated configuration
+config/
+token.dat
+settings.json
+launcher-settings.json
+
+# Logs and databases
+*.log
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+
+# Build output
+bin/
+obj/
+runtime/
+*.exe
+*.zip
+
+# Editor and OS files
+.vs/
+.vscode/
+*.user
+*.suo
+Thumbs.db
+.DS_Store

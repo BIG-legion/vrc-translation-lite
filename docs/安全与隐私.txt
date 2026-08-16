@@ -1,0 +1,13 @@
+安全与隐私说明
+==============
+
+1. 本安装包不携带制作者的 API 令牌、New API 数据库、VRCT 配置、聊天记录或日志。
+2. 兼容中转仅绑定本机地址 127.0.0.1:1234。
+3. 翻译请求只转发到安装器配置的本机 New API，默认是 http://127.0.0.1:3000。
+4. 如果在安装器中填写令牌，令牌会立即使用 Windows DPAPI LocalMachine 模式加密后保存。
+5. token.dat 的 NTFS 权限会限制为当前 Windows 用户、SYSTEM 和本机管理员。
+6. 中转日志不会记录请求正文或 Authorization 内容。
+7. 自动配置 VRCT 前会先备份 config.json；卸载本助手不会自动删除 VRCT 或 New API。
+
+建议只从 VRCT 与 New API 的官方 GitHub 页面下载本体，并在分享前核对压缩包 SHA256。
+
