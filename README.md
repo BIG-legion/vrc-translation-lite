@@ -11,7 +11,8 @@
 ## 项目想法
 
 VRCT 已经能够完成麦克风和扬声器语音识别、翻译、VRChat OSC 输出与 VR Overlay 显示，但模型服务、令牌、端口和启动顺序仍需要手动配置。
-且不能配置deepseek的api，根本目的是使用deepseek来进行翻译。
+且不能配置deepseek的api，本项目根本目的是使用deepseek来进行翻译。
+
 本项目把整个流程整理为三个清晰层次：
 
 1. **VRCT** 负责语音识别、翻译显示和 VRChat 输出。
