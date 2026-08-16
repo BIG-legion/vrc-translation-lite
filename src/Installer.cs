@@ -68,14 +68,15 @@ namespace VRCTranslationLiteInstaller
             header.Controls.Add(title);
 
             Label subtitle = new Label();
-            subtitle.Text = "自动安装兼容中转、配置 VRCT，并创建一键式图形启动器。";
-            subtitle.ForeColor = Color.FromArgb(204, 251, 241);
+            subtitle.Text = "重要：本包不含 VRCT 和 New API，请先分别下载；本安装器负责连接和配置。";
+            subtitle.ForeColor = Color.FromArgb(254, 240, 138);
+            subtitle.Font = new Font("Microsoft YaHei UI", 9F, FontStyle.Bold);
             subtitle.AutoSize = true;
             subtitle.Location = new Point(28, 57);
             header.Controls.Add(subtitle);
 
             GroupBox paths = new GroupBox();
-            paths.Text = "第 1 步：选择已下载的软件";
+            paths.Text = "第 1 步：选择你已经下载好的 VRCT 和 New API";
             paths.Location = new Point(20, 108);
             paths.Size = new Size(780, 158);
             paths.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
@@ -89,14 +90,14 @@ namespace VRCTranslationLiteInstaller
             LinkLabel vrctLink = new LinkLabel();
             vrctLink.Text = "下载";
             vrctLink.AutoSize = true;
-            vrctLink.Location = new Point(92, 32);
+            vrctLink.Location = new Point(104, 32);
             vrctLink.LinkClicked += delegate { OpenUrl(VrctDownloadUrl); };
             paths.Controls.Add(vrctLink);
 
             LinkLabel newApiLink = new LinkLabel();
             newApiLink.Text = "下载";
             newApiLink.AutoSize = true;
-            newApiLink.Location = new Point(92, 70);
+            newApiLink.Location = new Point(104, 70);
             newApiLink.LinkClicked += delegate { OpenUrl(NewApiDownloadUrl); };
             paths.Controls.Add(newApiLink);
 
@@ -193,12 +194,12 @@ namespace VRCTranslationLiteInstaller
             Label label = new Label();
             label.Text = labelText;
             label.Location = new Point(18, y + 4);
-            label.Size = new Size(72, 22);
+            label.Size = new Size(84, 22);
             parent.Controls.Add(label);
 
             TextBox box = new TextBox();
-            box.Location = new Point(126, y);
-            box.Size = new Size(490, 26);
+            box.Location = new Point(140, y);
+            box.Size = new Size(476, 26);
             box.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             parent.Controls.Add(box);
 
